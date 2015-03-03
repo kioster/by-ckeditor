@@ -22,5 +22,8 @@
   ],
   "dependencies": {
     "font-awesome": "https://github.com/FortAwesome/Font-Awesome.git#~4.3.0"
+  },
+  "devDependencies": {
+    "jquery": "~2.1.3"
   }
 }

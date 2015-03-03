@@ -19,7 +19,8 @@ CKEDITOR.plugins.add( 'about', {
 		editor.ui.addButton && editor.ui.addButton( 'About', {
 			label: editor.lang.about.title,
 			command: 'about',
-			toolbar: 'about'
+			toolbar: 'about',
+			faIcon: "fa-plus"
 		} );
 
 		CKEDITOR.dialog.add( 'about', this.path + 'dialogs/about.js' );

@@ -122,4 +122,13 @@ http://docs.cksource.com/CKEditor_4.x/Skin_SDK/Reset
 .cke_reset_all *::-webkit-scrollbar-thumb:hover {
   opacity: 0.7; }
 
+/*support fa*/
+.cke_button_icon.fa {
+  font-family: FontAwesome !important;
+  line-height: 18px !important; }
+
+.cke_button_icon.fa:before {
+  font-size: 16px;
+  margin-left: 2px; }
+
 /*# sourceMappingURL=reset.css.map */

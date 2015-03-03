@@ -83,8 +83,6 @@
 			}
 		} );
 
-		console.log(this);
-
 		this._ = {};
 	};
 
@@ -279,6 +277,7 @@
 			try{
 				if(typeof params.faIcon !== "undefined" && params.faIcon !== ""){
 					params.style = params.style.replace(bgImageFileter, "$2");
+					params.faIcon += " fa";
 				}
 			} catch (e){
 				params.style = _style;

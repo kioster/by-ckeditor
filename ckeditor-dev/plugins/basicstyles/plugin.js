@@ -36,10 +36,12 @@ CKEDITOR.plugins.add( 'basicstyles', {
 
 				// Register the button, if the button plugin is loaded.
 				if ( editor.ui.addButton ) {
+					buttonName[0] += 32;
 					editor.ui.addButton( buttonName, {
 						label: buttonLabel,
 						command: commandName,
-						toolbar: 'basicstyles,' + ( order += 10 )
+						toolbar: 'basicstyles,' + ( order += 10 ),
+						faIcon: 'fa-'+commandName
 					} );
 				}
 			};

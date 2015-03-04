@@ -76,7 +76,8 @@
 			editor.ui.addButton && editor.ui.addButton( 'CreateDiv', {
 				label: lang.toolbar,
 				command: 'creatediv',
-				toolbar: 'blocks,50'
+				toolbar: 'blocks,50',
+				faIcon: CKEDITOR.faIcons.div
 			} );
 
 			if ( editor.addMenuItems ) {

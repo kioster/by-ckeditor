@@ -5,9 +5,10 @@
 
 (function (CKEDITOR) {
 	CKEDITOR.faIcons = {
-		about : "fa-plus"
+		about : "fa-info",
+		div : "fa-cube"
 	};
-	for(var v in CKEDITOR.faIcons){
+	/*for(var v in CKEDITOR.faIcons){
 		CKEDITOR.faIcons[v] = CKEDITOR.faIcons[v] + " fa";
-	}
+	}*/
 })(CKEDITOR);

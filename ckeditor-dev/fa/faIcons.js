@@ -3,11 +3,11 @@
  */
 
 
-(function (CKEDITOR) {
+/*(function (CKEDITOR) {
 	CKEDITOR.faIcons = {
 		about : "fa-plus"
 	};
 	for(var v in CKEDITOR.faIcons){
 		CKEDITOR.faIcons[v] = CKEDITOR.faIcons[v] + " fa";
 	}
-})(CKEDITOR);
+})(CKEDITOR);*/

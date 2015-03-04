@@ -20,7 +20,7 @@ CKEDITOR.plugins.add( 'about', {
 			label: editor.lang.about.title,
 			command: 'about',
 			toolbar: 'about',
-			faIcon: "fa-plus"
+			faIcon: CKEDITOR.faIcons.about
 		} );
 
 		CKEDITOR.dialog.add( 'about', this.path + 'dialogs/about.js' );

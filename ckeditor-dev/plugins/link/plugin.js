@@ -74,17 +74,20 @@
 				editor.ui.addButton( 'Link', {
 					label: editor.lang.link.toolbar,
 					command: 'link',
-					toolbar: 'links,10'
+					toolbar: 'links,10',
+					faIcon: CKEDITOR.faIcons.link
 				} );
 				editor.ui.addButton( 'Unlink', {
 					label: editor.lang.link.unlink,
 					command: 'unlink',
-					toolbar: 'links,20'
+					toolbar: 'links,20',
+					faIcon: CKEDITOR.faIcons.unlink
 				} );
 				editor.ui.addButton( 'Anchor', {
 					label: editor.lang.link.anchor.toolbar,
 					command: 'anchor',
-					toolbar: 'links,30'
+					toolbar: 'links,30',
+					faIcon: CKEDITOR.faIcons.anchor
 				} );
 			}
 

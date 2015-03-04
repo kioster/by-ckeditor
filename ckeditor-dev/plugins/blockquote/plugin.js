@@ -244,7 +244,8 @@
 			editor.ui.addButton && editor.ui.addButton( 'Blockquote', {
 				label: editor.lang.blockquote.toolbar,
 				command: 'blockquote',
-				toolbar: 'blocks,10'
+				toolbar: 'blocks,10',
+				faIcon: CKEDITOR.faIcons.blockquote
 			} );
 		}
 	} );

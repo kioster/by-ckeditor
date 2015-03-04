@@ -41,7 +41,7 @@ CKEDITOR.plugins.add( 'basicstyles', {
 						label: buttonLabel,
 						command: commandName,
 						toolbar: 'basicstyles,' + ( order += 10 ),
-						faIcon: 'fa-'+commandName
+						faIcon: 'fa-'+buttonName
 					} );
 				}
 			};
@@ -90,12 +90,12 @@ CKEDITOR.plugins.add( 'basicstyles', {
 			config = editor.config,
 			lang = editor.lang.basicstyles;
 
-		addButtonCommand( 'Bold', lang.bold, 'bold', config.coreStyles_bold );
-		addButtonCommand( 'Italic', lang.italic, 'italic', config.coreStyles_italic );
-		addButtonCommand( 'Underline', lang.underline, 'underline', config.coreStyles_underline );
-		addButtonCommand( 'Strike', lang.strike, 'strike', config.coreStyles_strike );
-		addButtonCommand( 'Subscript', lang.subscript, 'subscript', config.coreStyles_subscript );
-		addButtonCommand( 'Superscript', lang.superscript, 'superscript', config.coreStyles_superscript );
+		addButtonCommand( 'bold', lang.bold, 'bold', config.coreStyles_bold );
+		addButtonCommand( 'italic', lang.italic, 'italic', config.coreStyles_italic );
+		addButtonCommand( 'underline', lang.underline, 'underline', config.coreStyles_underline );
+		addButtonCommand( 'strikethrough', lang.strike, 'strike', config.coreStyles_strike );
+		addButtonCommand( 'subscript', lang.subscript, 'subscript', config.coreStyles_subscript );
+		addButtonCommand( 'superscript', lang.superscript, 'superscript', config.coreStyles_superscript );
 
 		editor.setKeystroke( [
 			[ CKEDITOR.CTRL + 66 /*B*/, 'bold' ],

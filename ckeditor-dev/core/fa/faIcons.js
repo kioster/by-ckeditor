@@ -7,6 +7,12 @@
 	CKEDITOR.faIcons = {
 		about : "fa-info",
 		div : "fa-cube",
+		bold: "fa-bold",
+		italic: "fa-italic",
+		underline: "fa-underline",
+		strike: "fa-strikethrough",
+		subscript: "fa-subscript",
+		superscript: "fa-superscript",
 		blockquote : "fa-quote-right",
 		anchor : "fa-flag",
 		link : "fa-link",

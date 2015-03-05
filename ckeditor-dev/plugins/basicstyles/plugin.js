@@ -13,7 +13,7 @@ CKEDITOR.plugins.add( 'basicstyles', {
 		var order = 0;
 		// All buttons use the same code to register. So, to avoid
 		// duplications, let's use this tool function.
-		var addButtonCommand = function( buttonName, buttonLabel, commandName, styleDefiniton ) {
+		var addButtonCommand = function( buttonName, buttonLabel, commandName, styleDefiniton, faIconName ) {
 				// Disable the command if no definition is configured.
 				if ( !styleDefiniton )
 					return;
@@ -41,7 +41,7 @@ CKEDITOR.plugins.add( 'basicstyles', {
 						label: buttonLabel,
 						command: commandName,
 						toolbar: 'basicstyles,' + ( order += 10 ),
-						faIcon: 'fa-'+buttonName
+						faIcon: faIconName
 					} );
 				}
 			};
@@ -90,12 +90,12 @@ CKEDITOR.plugins.add( 'basicstyles', {
 			config = editor.config,
 			lang = editor.lang.basicstyles;
 
-		addButtonCommand( 'bold', lang.bold, 'bold', config.coreStyles_bold );
-		addButtonCommand( 'italic', lang.italic, 'italic', config.coreStyles_italic );
-		addButtonCommand( 'underline', lang.underline, 'underline', config.coreStyles_underline );
-		addButtonCommand( 'strikethrough', lang.strike, 'strike', config.coreStyles_strike );
-		addButtonCommand( 'subscript', lang.subscript, 'subscript', config.coreStyles_subscript );
-		addButtonCommand( 'superscript', lang.superscript, 'superscript', config.coreStyles_superscript );
+		addButtonCommand( 'Bold', lang.bold, 'bold', config.coreStyles_bold, CKEDITOR.faIcons.bold );
+		addButtonCommand( 'Italic', lang.italic, 'italic', config.coreStyles_italic, CKEDITOR.faIcons.italic );
+		addButtonCommand( 'Underline', lang.underline, 'underline', config.coreStyles_underline, CKEDITOR.faIcons.underline );
+		addButtonCommand( 'Strike', lang.strike, 'strike', config.coreStyles_strike, CKEDITOR.faIcons.strike );
+		addButtonCommand( 'Subscript', lang.subscript, 'subscript', config.coreStyles_subscript, CKEDITOR.faIcons.subscript );
+		addButtonCommand( 'Superscript', lang.superscript, 'superscript', config.coreStyles_superscript, CKEDITOR.faIcons.superscript );
 
 		editor.setKeystroke( [
 			[ CKEDITOR.CTRL + 66 /*B*/, 'bold' ],

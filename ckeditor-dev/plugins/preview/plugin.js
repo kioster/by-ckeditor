@@ -126,7 +126,8 @@
 			editor.ui.addButton && editor.ui.addButton( 'Preview', {
 				label: editor.lang.preview.preview,
 				command: pluginName,
-				toolbar: 'document,40'
+				toolbar: 'document,40',
+				faIcon: CKEDITOR.faIcons.preview
 			} );
 		}
 	} );

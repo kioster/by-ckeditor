@@ -44,7 +44,8 @@
 			editor.ui.addButton && editor.ui.addButton( 'PasteText', {
 				label: editor.lang.pastetext.button,
 				command: commandName,
-				toolbar: 'clipboard,40'
+				toolbar: 'clipboard,40',
+				faIcon: CKEDITOR.faIcons.pastetext
 			} );
 
 			if ( editor.config.forcePasteAsPlainText ) {

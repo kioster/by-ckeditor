@@ -53,7 +53,8 @@
 			editor.ui.addButton && editor.ui.addButton( 'SelectAll', {
 				label: editor.lang.selectall.toolbar,
 				command: 'selectAll',
-				toolbar: 'selection,10'
+				toolbar: 'selection,10',
+				faIcon: CKEDITOR.faIcons.selectall
 			} );
 		}
 	} );

@@ -36,7 +36,8 @@
 			editor.ui.addButton && editor.ui.addButton( 'HorizontalRule', {
 				label: editor.lang.horizontalrule.toolbar,
 				command: pluginName,
-				toolbar: 'insert,40'
+				toolbar: 'insert,40',
+				faIcon: CKEDITOR.faIcons.horizontalrule
 			} );
 		}
 	} );

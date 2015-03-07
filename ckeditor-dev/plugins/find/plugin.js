@@ -22,13 +22,15 @@ CKEDITOR.plugins.add( 'find', {
 			editor.ui.addButton( 'Find', {
 				label: editor.lang.find.find,
 				command: 'find',
-				toolbar: 'find,10'
+				toolbar: 'find,10',
+				faIcon: CKEDITOR.faIcons.find
 			} );
 
 			editor.ui.addButton( 'Replace', {
 				label: editor.lang.find.replace,
 				command: 'replace',
-				toolbar: 'find,20'
+				toolbar: 'find,20',
+				faIcon: CKEDITOR.faIcons.replace
 			} );
 		}
 

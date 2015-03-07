@@ -830,13 +830,15 @@
 					label: editor.lang.list.numberedlist,
 					command: 'numberedlist',
 					directional: true,
-					toolbar: 'list,10'
+					toolbar: 'list,10',
+					faIcon: CKEDITOR.faIcons.numberedlist
 				} );
 				editor.ui.addButton( 'BulletedList', {
 					label: editor.lang.list.bulletedlist,
 					command: 'bulletedlist',
 					directional: true,
-					toolbar: 'list,20'
+					toolbar: 'list,20',
+					faIcon: CKEDITOR.faIcons.bulletedlist
 				} );
 			}
 

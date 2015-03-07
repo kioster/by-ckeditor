@@ -19,7 +19,8 @@
 			editor.ui.addButton && editor.ui.addButton( 'Templates', {
 				label: editor.lang.templates.button,
 				command: 'templates',
-				toolbar: 'doctools,10'
+				toolbar: 'doctools,10',
+				faIcon: CKEDITOR.faIcons.templates
 			} );
 		}
 	} );

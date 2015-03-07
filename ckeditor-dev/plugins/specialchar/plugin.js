@@ -44,7 +44,8 @@ CKEDITOR.plugins.add( 'specialchar', {
 		editor.ui.addButton && editor.ui.addButton( 'SpecialChar', {
 			label: editor.lang.specialchar.toolbar,
 			command: pluginName,
-			toolbar: 'insert,50'
+			toolbar: 'insert,50',
+			faIcon: CKEDITOR.faIcons.specialchar
 		} );
 	}
 } );

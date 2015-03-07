@@ -92,7 +92,8 @@
 			editor.ui.addButton && editor.ui.addButton( 'Image', {
 				label: editor.lang.common.image,
 				command: 'image',
-				toolbar: 'insert,10'
+				toolbar: 'insert,10',
+				faIcon: CKEDITOR.faIcons.image
 			} );
 
 			// Register context menu option for editing widget.

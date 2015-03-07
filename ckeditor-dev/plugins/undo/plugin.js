@@ -101,13 +101,15 @@
 				editor.ui.addButton( 'Undo', {
 					label: editor.lang.undo.undo,
 					command: 'undo',
-					toolbar: 'undo,10'
+					toolbar: 'undo,10',
+					faIcon: CKEDITOR.faIcons.undo
 				} );
 
 				editor.ui.addButton( 'Redo', {
 					label: editor.lang.undo.redo,
 					command: 'redo',
-					toolbar: 'undo,20'
+					toolbar: 'undo,20',
+					faIcon: CKEDITOR.faIcons.redo
 				} );
 			}
 

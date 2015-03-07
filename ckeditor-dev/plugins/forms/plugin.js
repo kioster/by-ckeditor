@@ -61,7 +61,7 @@ CKEDITOR.plugins.add( 'forms', {
 
 		// All buttons use the same code to register. So, to avoid
 		// duplications, let's use this tool function.
-		var addButtonCommand = function( buttonName, commandName, dialogFile ) {
+		var addButtonCommand = function( buttonName, commandName, dialogFile, faIconName ) {
 				var def = {
 					allowedContent: allowedContent[ commandName ],
 					requiredContent: requiredContent[ commandName ]
@@ -73,28 +73,29 @@ CKEDITOR.plugins.add( 'forms', {
 				editor.ui.addButton && editor.ui.addButton( buttonName, {
 					label: lang.common[ buttonName.charAt( 0 ).toLowerCase() + buttonName.slice( 1 ) ],
 					command: commandName,
-					toolbar: 'forms,' + ( order += 10 )
+					toolbar: 'forms,' + ( order += 10 ),
+					faIcon: faIconName
 				} );
 				CKEDITOR.dialog.add( commandName, dialogFile );
 			};
 
 		var dialogPath = this.path + 'dialogs/';
-		!editor.blockless && addButtonCommand( 'Form', 'form', dialogPath + 'form.js' );
-		addButtonCommand( 'Checkbox', 'checkbox', dialogPath + 'checkbox.js' );
-		addButtonCommand( 'Radio', 'radio', dialogPath + 'radio.js' );
-		addButtonCommand( 'TextField', 'textfield', dialogPath + 'textfield.js' );
-		addButtonCommand( 'Textarea', 'textarea', dialogPath + 'textarea.js' );
-		addButtonCommand( 'Select', 'select', dialogPath + 'select.js' );
-		addButtonCommand( 'Button', 'button', dialogPath + 'button.js' );
+		!editor.blockless && addButtonCommand( 'Form', 'form', dialogPath + 'form.js', CKEDITOR.faIcons.form );
+		addButtonCommand( 'Checkbox', 'checkbox', dialogPath + 'checkbox.js', CKEDITOR.faIcons.checkbox );
+		addButtonCommand( 'Radio', 'radio', dialogPath + 'radio.js', CKEDITOR.faIcons.radio );
+		addButtonCommand( 'TextField', 'textfield', dialogPath + 'textfield.js', CKEDITOR.faIcons.textfield );
+		addButtonCommand( 'Textarea', 'textarea', dialogPath + 'textarea.js', CKEDITOR.faIcons.textarea );
+		addButtonCommand( 'Select', 'select', dialogPath + 'select.js', CKEDITOR.faIcons.select );
+		addButtonCommand( 'Button', 'button', dialogPath + 'button.js', CKEDITOR.faIcons.button );
 
 		var imagePlugin = editor.plugins.image;
 
 		// Since Image plugin is disabled when Image2 is to be loaded,
 		// ImageButton also got to be off (#11222).
 		if ( imagePlugin && !editor.plugins.image2 )
-			addButtonCommand( 'ImageButton', 'imagebutton', CKEDITOR.plugins.getPath( 'image' ) + 'dialogs/image.js' );
+			addButtonCommand( 'ImageButton', 'imagebutton', CKEDITOR.plugins.getPath( 'image' ) + 'dialogs/image.js', CKEDITOR.faIcons.imagebutton );
 
-		addButtonCommand( 'HiddenField', 'hiddenfield', dialogPath + 'hiddenfield.js' );
+		addButtonCommand( 'HiddenField', 'hiddenfield', dialogPath + 'hiddenfield.js', CKEDITOR.faIcons.hiddenfield );
 
 		// If the "menu" plugin is loaded, register the menu items.
 		if ( editor.addMenuItems ) {

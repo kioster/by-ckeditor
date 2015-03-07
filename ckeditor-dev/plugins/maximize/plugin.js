@@ -287,7 +287,8 @@
 			editor.ui.addButton && editor.ui.addButton( 'Maximize', {
 				label: lang.maximize.maximize,
 				command: 'maximize',
-				toolbar: 'tools,10'
+				toolbar: 'tools,10',
+				faIcon: CKEDITOR.faIcons.maximize
 			} );
 
 			// Restore the command state after mode change, unless it has been changed to disabled (#6467)

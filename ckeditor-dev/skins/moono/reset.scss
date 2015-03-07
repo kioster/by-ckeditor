@@ -159,5 +159,16 @@ $font-size: 14px;
 }
 .cke_button_icon.fa:before{
 	font-size: 16px;
+}
+
+.cke_button_icon.fa.margin1:before{
+	margin-left: 1px;
+}
+
+.cke_button_icon.fa.margin2:before{
 	margin-left: 2px;
+}
+
+.cke_button_icon.fa.margin5:before{
+	margin-left: 5px;
 }

@@ -207,22 +207,26 @@
 				editor.ui.addButton( 'JustifyLeft', {
 					label: editor.lang.justify.left,
 					command: 'justifyleft',
-					toolbar: 'align,10'
+					toolbar: 'align,10',
+					faIcon: CKEDITOR.faIcons.justifyLeft
 				} );
 				editor.ui.addButton( 'JustifyCenter', {
 					label: editor.lang.justify.center,
 					command: 'justifycenter',
-					toolbar: 'align,20'
+					toolbar: 'align,20',
+					faIcon: CKEDITOR.faIcons.justifyCenter
 				} );
 				editor.ui.addButton( 'JustifyRight', {
 					label: editor.lang.justify.right,
 					command: 'justifyright',
-					toolbar: 'align,30'
+					toolbar: 'align,30',
+					faIcon: CKEDITOR.faIcons.justifyRight
 				} );
 				editor.ui.addButton( 'JustifyBlock', {
 					label: editor.lang.justify.block,
 					command: 'justifyblock',
-					toolbar: 'align,40'
+					toolbar: 'align,40',
+					faIcon: CKEDITOR.faIcons.justifyBlock
 				} );
 			}
 

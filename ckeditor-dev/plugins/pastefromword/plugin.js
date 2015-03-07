@@ -46,7 +46,8 @@
 			editor.ui.addButton && editor.ui.addButton( 'PasteFromWord', {
 				label: editor.lang.pastefromword.toolbar,
 				command: commandName,
-				toolbar: 'clipboard,50'
+				toolbar: 'clipboard,50',
+				faIcon: CKEDITOR.faIcons.pastefromword
 			} );
 
 			editor.on( 'pasteState', function( evt ) {

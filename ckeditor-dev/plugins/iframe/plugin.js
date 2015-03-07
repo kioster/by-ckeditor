@@ -40,7 +40,8 @@
 			editor.ui.addButton && editor.ui.addButton( 'Iframe', {
 				label: lang.toolbar,
 				command: pluginName,
-				toolbar: 'insert,80'
+				toolbar: 'insert,80',
+				faIcon: CKEDITOR.faIcons.iframe
 			} );
 
 			editor.on( 'doubleclick', function( evt ) {

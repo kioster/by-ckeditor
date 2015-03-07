@@ -47,7 +47,8 @@
 			editor.ui.addButton && editor.ui.addButton( 'Image', {
 				label: editor.lang.common.image,
 				command: pluginName,
-				toolbar: 'insert,10'
+				toolbar: 'insert,10',
+				faIcon: CKEDITOR.faIcons.image
 			} );
 
 			editor.on( 'doubleclick', function( evt ) {

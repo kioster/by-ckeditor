@@ -50,7 +50,8 @@
 			editor.ui.addButton && editor.ui.addButton( 'Save', {
 				label: editor.lang.save.toolbar,
 				command: pluginName,
-				toolbar: 'document,10'
+				toolbar: 'document,10',
+				faIcon: CKEDITOR.faIcons.save
 			} );
 		}
 	} );

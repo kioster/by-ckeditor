@@ -346,18 +346,19 @@
 		};
 
 		function addButtonsCommands() {
-			addButtonCommand( 'Cut', 'cut', createCutCopyCmd( 'cut' ), 10, 1 );
-			addButtonCommand( 'Copy', 'copy', createCutCopyCmd( 'copy' ), 20, 4 );
-			addButtonCommand( 'Paste', 'paste', createPasteCmd(), 30, 8 );
+			addButtonCommand( 'Cut', 'cut', createCutCopyCmd( 'cut' ), 10, 1, CKEDITOR.faIcons.cut );
+			addButtonCommand( 'Copy', 'copy', createCutCopyCmd( 'copy' ), 20, 4, CKEDITOR.faIcons.copy );
+			addButtonCommand( 'Paste', 'paste', createPasteCmd(), 30, 8, CKEDITOR.faIcons.paste );
 
-			function addButtonCommand( buttonName, commandName, command, toolbarOrder, ctxMenuOrder ) {
+			function addButtonCommand( buttonName, commandName, command, toolbarOrder, ctxMenuOrder, faIconName ) {
 				var lang = editor.lang.clipboard[ commandName ];
 
 				editor.addCommand( commandName, command );
 				editor.ui.addButton && editor.ui.addButton( buttonName, {
 					label: lang,
 					command: commandName,
-					toolbar: 'clipboard,' + toolbarOrder
+					toolbar: 'clipboard,' + toolbarOrder,
+					faIcon: faIconName
 				} );
 
 				// If the "menu" plugin is loaded, register the menu item.

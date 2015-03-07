@@ -115,7 +115,8 @@
 			editor.ui.addButton && editor.ui.addButton( 'ShowBlocks', {
 				label: editor.lang.showblocks.toolbar,
 				command: 'showblocks',
-				toolbar: 'tools,20'
+				toolbar: 'tools,20',
+				faIcon: CKEDITOR.faIcons.showblocks
 			} );
 
 			// Refresh the command on setData.

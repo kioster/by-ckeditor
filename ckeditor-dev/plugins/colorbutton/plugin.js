@@ -20,11 +20,11 @@ CKEDITOR.plugins.add( 'colorbutton', {
 			lang = editor.lang.colorbutton;
 
 		if ( !CKEDITOR.env.hc ) {
-			addButton( 'TextColor', 'fore', lang.textColorTitle, 10 );
-			addButton( 'BGColor', 'back', lang.bgColorTitle, 20 );
+			addButton( 'TextColor', 'fore', lang.textColorTitle, 10, CKEDITOR.faIcons.textcolor );
+			addButton( 'BGColor', 'back', lang.bgColorTitle, 20, CKEDITOR.faIcons.bgcolor );
 		}
 
-		function addButton( name, type, title, order ) {
+		function addButton( name, type, title, order, faIconName ) {
 			var style = new CKEDITOR.style( config[ 'colorButton_' + type + 'Style' ] ),
 				colorBoxId = CKEDITOR.tools.getNextId() + '_colorBox';
 
@@ -36,6 +36,7 @@ CKEDITOR.plugins.add( 'colorbutton', {
 				toolbar: 'colors,' + order,
 				allowedContent: style,
 				requiredContent: style,
+				faIcon: faIconName,
 
 				panel: {
 					css: CKEDITOR.skin.getPath( 'editor' ),

@@ -53,7 +53,8 @@
 			editor.ui.addButton && editor.ui.addButton( 'Flash', {
 				label: editor.lang.common.flash,
 				command: 'flash',
-				toolbar: 'insert,20'
+				toolbar: 'insert,20',
+				faIcon: CKEDITOR.faIcons.falsh
 			} );
 			CKEDITOR.dialog.add( 'flash', this.path + 'dialogs/flash.js' );
 

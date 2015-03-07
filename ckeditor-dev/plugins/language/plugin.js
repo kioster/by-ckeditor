@@ -104,6 +104,7 @@
 				requiredContent: requiredContent,
 				toolbar: 'bidi,30',
 				command: 'language',
+				faIcon: CKEDITOR.faIcons.language,
 				onMenu: function() {
 					var activeItems = {},
 						currentLanguagedElement = plugin.getCurrentLangElement( editor );

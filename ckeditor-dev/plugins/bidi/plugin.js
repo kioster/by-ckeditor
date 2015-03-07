@@ -222,22 +222,23 @@
 
 			// All buttons use the same code to register. So, to avoid
 			// duplications, let's use this tool function.
-			function addButtonCommand( buttonName, buttonLabel, commandName, commandDef, order ) {
+			function addButtonCommand( buttonName, buttonLabel, commandName, commandDef, order, faIconName ) {
 				editor.addCommand( commandName, new CKEDITOR.command( editor, commandDef ) );
 
 				if ( editor.ui.addButton ) {
 					editor.ui.addButton( buttonName, {
 						label: buttonLabel,
 						command: commandName,
-						toolbar: 'bidi,' + order
+						toolbar: 'bidi,' + order,
+						faIcon: faIconName
 					} );
 				}
 			}
 
 			var lang = editor.lang.bidi;
 
-			addButtonCommand( 'BidiLtr', lang.ltr, 'bidiltr', bidiCommand( 'ltr' ), 10 );
-			addButtonCommand( 'BidiRtl', lang.rtl, 'bidirtl', bidiCommand( 'rtl' ), 20 );
+			addButtonCommand( 'BidiLtr', lang.ltr, 'bidiltr', bidiCommand( 'ltr' ), 10, CKEDITOR.faIcons.bidiLtr );
+			addButtonCommand( 'BidiRtl', lang.rtl, 'bidirtl', bidiCommand( 'rtl' ), 20, CKEDITOR.faIcons.bidiRtr );
 
 			editor.on( 'contentDom', function() {
 				editor.document.on( 'dirChanged', function( evt ) {

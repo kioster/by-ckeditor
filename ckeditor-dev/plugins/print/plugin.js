@@ -27,7 +27,8 @@ CKEDITOR.plugins.add( 'print', {
 		editor.ui.addButton && editor.ui.addButton( 'Print', {
 			label: editor.lang.print.toolbar,
 			command: pluginName,
-			toolbar: 'document,50'
+			toolbar: 'document,50',
+			faIcon: CKEDITOR.faIcons.print
 		} );
 	}
 } );

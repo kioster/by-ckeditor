@@ -33,14 +33,16 @@
 					label: editor.lang.indent.indent,
 					command: 'indent',
 					directional: true,
-					toolbar: 'indent,20'
+					toolbar: 'indent,20',
+					faIcon: CKEDITOR.faIcons.indent
 				} );
 
 				editor.ui.addButton( 'Outdent', {
 					label: editor.lang.indent.outdent,
 					command: 'outdent',
 					directional: true,
-					toolbar: 'indent,10'
+					toolbar: 'indent,10',
+					faIcon: CKEDITOR.faIcons.outdent
 				} );
 			}
 

@@ -71,7 +71,8 @@
 				editor.ui.addButton( 'Source', {
 					label: editor.lang.sourcearea.toolbar,
 					command: 'source',
-					toolbar: 'mode,10'
+					toolbar: 'mode,10',
+					faIcon: CKEDITOR.faIcons.sourcearea
 				} );
 			}
 

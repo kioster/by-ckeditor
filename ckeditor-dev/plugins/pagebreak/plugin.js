@@ -45,7 +45,8 @@
 			editor.ui.addButton && editor.ui.addButton( 'PageBreak', {
 				label: editor.lang.pagebreak.toolbar,
 				command: 'pagebreak',
-				toolbar: 'insert,70'
+				toolbar: 'insert,70',
+				faIcon: CKEDITOR.faIcons.pagebreak
 			} );
 
 			// Webkit based browsers needs help to select the page-break.

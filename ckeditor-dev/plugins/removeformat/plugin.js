@@ -14,7 +14,8 @@ CKEDITOR.plugins.add( 'removeformat', {
 		editor.ui.addButton && editor.ui.addButton( 'RemoveFormat', {
 			label: editor.lang.removeformat.toolbar,
 			command: 'removeFormat',
-			toolbar: 'cleanup,10'
+			toolbar: 'cleanup,10',
+			faIcon: CKEDITOR.faIcons.removeformat
 		} );
 	}
 } );

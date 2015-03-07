@@ -63,7 +63,8 @@ CKEDITOR.plugins.add( 'table', {
 		editor.ui.addButton && editor.ui.addButton( 'Table', {
 			label: lang.toolbar,
 			command: 'table',
-			toolbar: 'insert,30'
+			toolbar: 'insert,30',
+			faIcon: CKEDITOR.faIcons.table
 		} );
 
 		CKEDITOR.dialog.add( 'table', this.path + 'dialogs/table.js' );

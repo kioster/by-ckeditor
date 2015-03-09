@@ -5,7 +5,7 @@
 (function (CKEDITOR) {
 	CKEDITOR.faIcons = {
 
-		sourcearea : "fa-code",
+		sourcearea : "fa-file-code-o",
 		save : "fa-save",
 		newpage : "fa-file-o",
 		preview : "fa-eye",
@@ -66,6 +66,7 @@
 		unlink : "fa-unlink",
 		anchor : "fa-flag",
 
+		codesnippet : "fa-code",
 		image : "fa-picture-o",
 		falsh : "fa-toggle-right"+" margin1",
 		table : "fa-table",

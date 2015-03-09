@@ -4,6 +4,7 @@
  */
 
 ( function() {
+
 	function addCombo( editor, comboName, styleType, lang, entries, defaultLabel, styleDefinition, order ) {
 		var config = editor.config,
 			style = new CKEDITOR.style( styleDefinition );
@@ -32,6 +33,9 @@
 			}
 		}
 
+		var comboCss = [ CKEDITOR.skin.getPath( 'editor' ) ].concat( config.contentsCss);
+		comboCss.push(CKEDITOR.basePath+'plugins/font/specialFont/specialFont.css');
+
 		editor.ui.addRichCombo( comboName, {
 			label: lang.label,
 			title: lang.panelTitle,
@@ -39,8 +43,9 @@
 			allowedContent: style,
 			requiredContent: style,
 
+
 			panel: {
-				css: [ CKEDITOR.skin.getPath( 'editor' ) ].concat( config.contentsCss ),
+				css: comboCss,
 				multiSelect: false,
 				attributes: { 'aria-label': lang.panelTitle }
 			},
@@ -137,8 +142,9 @@
 						// the styles.
 						for ( var value in styles ) {
 							if ( styles[ value ].checkElementMatch( element, true, editor ) ) {
-								if ( value != currentValue )
+								if ( value != currentValue ){
 									this.setValue( value );
+								}
 								return;
 							}
 						}
@@ -180,6 +186,7 @@
 		cloneSubtreeIntoRange( range, elements );
 	}
 
+
 	CKEDITOR.plugins.add( 'font', {
 		requires: 'richcombo',
 		// jscs:disable maximumLineLength
@@ -187,9 +194,34 @@
 		// jscs:enable maximumLineLength
 		init: function( editor ) {
 			var config = editor.config;
-
 			addCombo( editor, 'Font', 'family', editor.lang.font, config.font_names, config.font_defaultLabel, config.font_style, 30 );
-			addCombo( editor, 'FontSize', 'size', editor.lang.font.fontSize, config.fontSize_sizes, config.fontSize_defaultLabel, config.fontSize_style, 40 );
+			addCombo( editor, 'FontSize', 'size', editor.lang.font.fontSize, config.fontSize_sizes, config.fontSize_defaultLabel, config.fontSize_style, 40 );(function() {
+
+			var specialFonts = {
+				goodvibes: 'goodvibes',
+				arialni: 'arialni'
+			};
+
+			var specialFont = '';
+			for ( var i in specialFonts){
+				specialFont +=
+					'@font-face{font-family: ' +
+					specialFonts[i] +
+					';src: url('+CKEDITOR.basePath +
+					'plugins/font/specialFont/' +
+					specialFonts[i] +
+					'.ttf),\nurl(' +
+					CKEDITOR.basePath +
+					'plugins/font/specialFont/' +
+					specialFonts[i] +
+					'.eot);}\n';
+			}
+			var style = document.createElement('style');
+			style.type = "text/css";
+			style.innerHTML = specialFont;
+			document.head.appendChild(style);
+			CKEDITOR.addCss(specialFont);
+			})();
 		}
 	} );
 } )();
@@ -214,7 +246,18 @@
  * @cfg {String} [font_names=see source]
  * @member CKEDITOR.config
  */
-CKEDITOR.config.font_names = 'Arial/Arial, Helvetica, sans-serif;' +
+
+
+
+CKEDITOR.config.font_names = '宋体/宋体;' +
+	'黑体/黑体;'+
+	'华文细黑/华文细黑;' +
+	'微软雅黑UI/Microsoft Yahei UI;' +
+	'微软雅黑/Microsoft Yahei;' +
+	'Helvetica/Helvetica;' +
+	'Arial/Arial, Helvetica, sans-serif;' +
+	'ArialNI/arialni;' +
+	'Good Vibes/goodvibes,华文行楷;' +
 	'Comic Sans MS/Comic Sans MS, cursive;' +
 	'Courier New/Courier New, Courier, monospace;' +
 	'Georgia/Georgia, serif;' +

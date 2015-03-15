@@ -85,7 +85,7 @@
 									var aceEditor = document.aceFrame.aceEditor;
 									aceEditor.getSession().setMode( 'ace/mode/' + this.aceLanguage[this.getValue()] );
 								}
-								
+
 								aceEditor.focus();
 							}
 						},
@@ -100,7 +100,6 @@
 							},
 							commit: function( widget ) {
 								widget.setData( 'code', document.aceFrame.aceEditor.getValue() );
-								console.log( this );
 							},
 							validate: CKEDITOR.dialog.validate.notEmpty( lang.emptySnippetError ),
 							style: 'cursor:auto;' +

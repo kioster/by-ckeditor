@@ -82,8 +82,11 @@
 							{
 								if ( this.getValue() )
 								{
-									document.aceFrame.aceEditor.getSession().setMode( 'ace/mode/' + this.aceLanguage[this.getValue()] );
+									var aceEditor = document.aceFrame.aceEditor;
+									aceEditor.getSession().setMode( 'ace/mode/' + this.aceLanguage[this.getValue()] );
 								}
+								
+								aceEditor.focus();
 							}
 						},
 						{

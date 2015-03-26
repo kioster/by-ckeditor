@@ -95,13 +95,12 @@
 							html: '<iframe name="aceFrame" src="' + CKEDITOR.basePath + 'plugins/codesnippet/dialogs/editor.html"></iframe>',
 							setup: function( widget ) {
 								var aceEditor = document.aceFrame.aceEditor;
-								aceEditor.setValue( widget.data.code );
+								aceEditor.setValue( widget.data.code, 1 );
 								aceEditor.focus();
 							},
 							commit: function( widget ) {
 								widget.setData( 'code', document.aceFrame.aceEditor.getValue() );
 							},
-							validate: CKEDITOR.dialog.validate.notEmpty( lang.emptySnippetError ),
 							style: 'cursor:auto;' +
 							'width:' + width + 'px;' +
 							'height:' + height + 'px;',

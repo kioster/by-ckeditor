@@ -103,6 +103,10 @@
 								that.hljs = window.hljs;
 								callback();
 							} );
+							/*CKEDITOR.scriptLoader.load( path + 'lib/codemirror/lib/codemirror.js', function() {
+								that.CodeMirror = window.CodeMirror;
+								callback();
+							} );*/
 						}
 
 						// Note: This will work for framed editor only.
@@ -110,11 +114,25 @@
 					},
 
 					highlighter: function( code, language, callback ) {
+						/*var codeMirrorBox = document.createElement( 'div' );
+						var codeMirror = this.CodeMirror(codeMirrorBox, {
+							theme: editor.config.codeSnippet_theme,
+							value: code,
+							lineNumbers: true,
+							mode: "text/html",
+							matchBrackets: true,
+							readOnly: "nocursor"
+						});*/
+						/*var highlighted;
+						 highlighted.value = codeMirrorBox.innerHTML;*/
+
 						var highlighted = this.hljs.highlightAuto( code,
 								this.hljs.getLanguage( language ) ? [ language ] : undefined );
 
-						if ( highlighted )
+						if ( highlighted ) {
 							callback( highlighted.value );
+						}
+
 					}
 				} );
 
@@ -135,6 +153,19 @@
 		highlighter: Highlighter
 	};
 
+	CKEDITOR.plugins.add( 'codeMirrorHighlighter' , {
+		afterInit: function( editor ) {
+
+			var myHighlighter = new CKEDITOR.plugins.codesnippet.highlighter( {
+				init: function( ready ) {
+
+				},
+				highlighter: function( code, language, callback ) {
+
+				}
+			} );
+		}
+	} );
 	/**
 	 * A Code Snippet highlighter. It can be set as a default highlighter
 	 * using {@link CKEDITOR.plugins.codesnippet#setHighlighter}, for example:
@@ -279,7 +310,6 @@
 	function registerWidget( editor ) {
 		var codeClass = editor.config.codeSnippet_codeClass,
 			newLineRegex = /\r?\n/g,
-			textarea = new CKEDITOR.dom.element( 'textarea' ),
 			lang = editor.lang.codesnippet;
 
 		editor.widgets.add( 'codeSnippet', {
@@ -364,8 +394,9 @@
 					data.lang = matchResult[ 1 ];
 
 				// Use textarea to decode HTML entities (#11926).
-				textarea.setHtml( code.getHtml() );
-				data.code = textarea.getValue();
+				/*textarea.setHtml( code.getHtml() );
+				data.code = textarea.getValue();*/
+				data.code = code.getHtml();
 
 				code.addClass( codeClass );
 
@@ -469,4 +500,4 @@ CKEDITOR.config.codeSnippet_codeClass = 'hljs';
  * @cfg {String} [codeSnippet_theme='default']
  * @member CKEDITOR.config
  */
-CKEDITOR.config.codeSnippet_theme = 'monokai_sublime';
+CKEDITOR.config.codeSnippet_theme = 'monokai';

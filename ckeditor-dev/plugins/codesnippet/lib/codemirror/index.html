@@ -1,0 +1,49 @@
+<!doctype html>
+
+<title>CodeMirror</title>
+<meta charset="utf-8"/>
+
+<link rel=stylesheet href="lib/codemirror.css">
+<link rel="stylesheet" href="theme/monokai.css">
+<link rel=stylesheet href="doc/docs.css">
+<script src="lib/codemirror.js"></script>
+<script src="mode/xml/xml.js"></script>
+<script src="mode/javascript/javascript.js"></script>
+<script src="mode/css/css.js"></script>
+<script src="mode/htmlmixed/htmlmixed.js"></script>
+<script src="addon/edit/matchbrackets.js"></script>
+
+<script src="doc/activebookmark.js"></script>
+
+<style>
+  .CodeMirror { height: auto; border: 1px solid #ddd; }
+  .CodeMirror-scroll { max-height: 200px; }
+  .CodeMirror pre { padding-left: 7px; line-height: 1.25; }
+</style>
+
+
+  <h2>This is CodeMirror</h2>
+	  <div id=demotext>
+
+	  </div>
+  <script>
+	  var value = '<!-- Create a simple CodeMirror instance -->\n'+
+'<link rel=\"stylesheet\" href=\"lib\/codemirror.css\">\n'+
+'<script src=\"lib/codemirror.js\"><\/script>\n'+
+'<script>\n'+
+'	var editor = CodeMirror.fromTextArea(myTextarea, {\n'+
+'		lineNumbers: true\n'+
+'	});\n'+
+'<\/script>';
+	  var editor = CodeMirror(document.getElementById("demotext"), {
+		  theme: "monokai",
+		  value: value,
+		  lineNumbers: true,
+		  mode: "text/html",
+		  matchBrackets: true,
+		  readOnly: "nocursor"
+	  });
+	  console.log(editor.doc);
+  </script>
+
+

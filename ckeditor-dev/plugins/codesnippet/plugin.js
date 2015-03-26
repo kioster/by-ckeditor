@@ -398,7 +398,7 @@
 				data.code = textarea.getValue();*/
 				data.code = code.getHtml();
 
-				code.addClass( codeClass );
+				code.addClass( codeClass );gi
 
 				return el;
 			},

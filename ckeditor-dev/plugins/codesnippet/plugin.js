@@ -69,6 +69,9 @@
 			// At the very end, if no custom highlighter was set so far (by plugin#setHighlighter)
 			// we will set default one.
 			if ( !editor._.codesnippet.highlighter ) {
+				var codeMirrorBox = document.createElement( 'div' );
+				//codeMirrorBox.style.visibility = 'hidden';
+				document.body.appendChild( codeMirrorBox );
 				var hljsHighlighter = new CKEDITOR.plugins.codesnippet.highlighter( {
 					languages: {
 						apache: 'Apache',
@@ -103,10 +106,6 @@
 								that.hljs = window.hljs;
 								callback();
 							} );
-							/*CKEDITOR.scriptLoader.load( path + 'lib/codemirror/lib/codemirror.js', function() {
-								that.CodeMirror = window.CodeMirror;
-								callback();
-							} );*/
 						}
 
 						// Note: This will work for framed editor only.
@@ -114,18 +113,6 @@
 					},
 
 					highlighter: function( code, language, callback ) {
-						/*var codeMirrorBox = document.createElement( 'div' );
-						var codeMirror = this.CodeMirror(codeMirrorBox, {
-							theme: editor.config.codeSnippet_theme,
-							value: code,
-							lineNumbers: true,
-							mode: "text/html",
-							matchBrackets: true,
-							readOnly: "nocursor"
-						});*/
-						/*var highlighted;
-						 highlighted.value = codeMirrorBox.innerHTML;*/
-
 						var highlighted = this.hljs.highlightAuto( code,
 								this.hljs.getLanguage( language ) ? [ language ] : undefined );
 
@@ -153,19 +140,6 @@
 		highlighter: Highlighter
 	};
 
-	CKEDITOR.plugins.add( 'codeMirrorHighlighter' , {
-		afterInit: function( editor ) {
-
-			var myHighlighter = new CKEDITOR.plugins.codesnippet.highlighter( {
-				init: function( ready ) {
-
-				},
-				highlighter: function( code, language, callback ) {
-
-				}
-			} );
-		}
-	} );
 	/**
 	 * A Code Snippet highlighter. It can be set as a default highlighter
 	 * using {@link CKEDITOR.plugins.codesnippet#setHighlighter}, for example:
@@ -406,6 +380,7 @@
 			// Downcasts to <pre><code [class="language-*"]>...</code></pre>
 			downcast: function( el ) {
 				var code = el.getFirst( 'code' );
+				console.log(el.getFirst);
 
 				// Remove pretty formatting from <code>...</code>.
 				code.children.length = 0;

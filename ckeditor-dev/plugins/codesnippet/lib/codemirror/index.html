@@ -4,7 +4,7 @@
 <meta charset="utf-8"/>
 
 <link rel=stylesheet href="lib/codemirror.css">
-<link rel="stylesheet" href="theme/monokai.css">
+<link rel="stylesheet" href="theme/neat.css">
 <link rel=stylesheet href="doc/docs.css">
 <script src="lib/codemirror.js"></script>
 <script src="mode/xml/xml.js"></script>
@@ -21,11 +21,13 @@
   .CodeMirror pre { padding-left: 7px; line-height: 1.25; }
 </style>
 
+<h2>This is CodeMirror</h2>
+<div id="demotext">
 
-  <h2>This is CodeMirror</h2>
-	  <div id=demotext>
+</div>
+<div id = "test">
 
-	  </div>
+</div>
   <script>
 	  var value = '<!-- Create a simple CodeMirror instance -->\n'+
 '<link rel=\"stylesheet\" href=\"lib\/codemirror.css\">\n'+
@@ -36,14 +38,15 @@
 '	});\n'+
 '<\/script>';
 	  var editor = CodeMirror(document.getElementById("demotext"), {
-		  theme: "monokai",
+		  theme: "neat",
 		  value: value,
 		  lineNumbers: true,
 		  mode: "text/html",
 		  matchBrackets: true,
 		  readOnly: "nocursor"
 	  });
-	  console.log(editor.doc);
+	  console.log(document.getElementById("demotext"));
+	  document.getElementById( "test").innerHTML = document.getElementById( "demotext").innerHTML;
   </script>
 
 

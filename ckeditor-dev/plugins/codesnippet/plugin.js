@@ -380,7 +380,6 @@
 			// Downcasts to <pre><code [class="language-*"]>...</code></pre>
 			downcast: function( el ) {
 				var code = el.getFirst( 'code' );
-				console.log(el.getFirst);
 
 				// Remove pretty formatting from <code>...</code>.
 				code.children.length = 0;
